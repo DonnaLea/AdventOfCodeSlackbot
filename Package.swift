@@ -15,5 +15,8 @@ let package = Package(
         .target(
             name: "AdventOfCodeSlackbot",
             dependencies: ["Alamofire"]),
+	.testTarget(
+            name: "AdventOfCodeSlackbotTests",
+            dependencies: ["AdventOfCodeSlackbot"]),
     ]
 )

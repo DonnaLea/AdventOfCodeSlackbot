@@ -43,6 +43,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AdventOfCodeSlackbot::AdventOfCodeSlackbotTests"
+               BuildableName = "AdventOfCodeSlackbotTests.xctest"
+               BlueprintName = "AdventOfCodeSlackbotTests"
+               ReferencedContainer = "container:AdventOfCodeSlackbot.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <AdditionalOptions>
       </AdditionalOptions>
