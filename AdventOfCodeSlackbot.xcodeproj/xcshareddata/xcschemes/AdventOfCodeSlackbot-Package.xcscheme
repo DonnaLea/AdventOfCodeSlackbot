@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AdventBot::AdventBot"
-               BuildableName = "AdventBot"
+               BlueprintIdentifier = "AdventOfCodeSlackbot::AdventOfCodeSlackbot"
+               BuildableName = "AdventOfCodeSlackbot"
                BlueprintName = "AdventOfCodeSlackbot"
                ReferencedContainer = "container:AdventOfCodeSlackbot.xcodeproj">
             </BuildableReference>
@@ -61,8 +61,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AdventBot::AdventBot"
-            BuildableName = "AdventBot"
+            BlueprintIdentifier = "AdventOfCodeSlackbot::AdventOfCodeSlackbot"
+            BuildableName = "AdventOfCodeSlackbot"
             BlueprintName = "AdventOfCodeSlackbot"
             ReferencedContainer = "container:AdventOfCodeSlackbot.xcodeproj">
          </BuildableReference>

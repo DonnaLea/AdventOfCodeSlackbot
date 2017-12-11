@@ -7,35 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6746F06E1FDB4DC7003CC22D /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D4F831FD8A67100A6CCD9 /* Leaderboard.swift */; };
-		678D4F821FD8A63200A6CCD9 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D4F801FD8A39500A6CCD9 /* Member.swift */; };
-		679B30D21FDDE04C00548F84 /* LeaderboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B30D11FDDE04C00548F84 /* LeaderboardTests.swift */; };
-		679B30D51FDDEA9C00548F84 /* CompletionDayLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679B30D31FDDE96F00548F84 /* CompletionDayLevel.swift */; };
-		OBJ_39 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_45 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Package.swift */; };
-		OBJ_51 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
-		OBJ_53 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Alamofire::Alamofire::Product" /* Alamofire.framework */; };
-		OBJ_60 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* AFError.swift */; };
-		OBJ_61 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Alamofire.swift */; };
-		OBJ_62 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* DispatchQueue+Alamofire.swift */; };
-		OBJ_63 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* MultipartFormData.swift */; };
-		OBJ_64 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* NetworkReachabilityManager.swift */; };
-		OBJ_65 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Notifications.swift */; };
-		OBJ_66 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* ParameterEncoding.swift */; };
-		OBJ_67 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* Request.swift */; };
-		OBJ_68 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Response.swift */; };
-		OBJ_69 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* ResponseSerialization.swift */; };
-		OBJ_70 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Result.swift */; };
-		OBJ_71 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* ServerTrustPolicy.swift */; };
-		OBJ_72 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* SessionDelegate.swift */; };
-		OBJ_73 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* SessionManager.swift */; };
-		OBJ_74 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* TaskDelegate.swift */; };
-		OBJ_75 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* Timeline.swift */; };
-		OBJ_76 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* Validation.swift */; };
+		OBJ_42 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_48 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Package.swift */; };
+		OBJ_54 /* CompletionDayLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CompletionDayLevel.swift */; };
+		OBJ_55 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Leaderboard.swift */; };
+		OBJ_56 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Member.swift */; };
+		OBJ_57 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* main.swift */; };
+		OBJ_59 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Alamofire::Alamofire::Product" /* Alamofire.framework */; };
+		OBJ_66 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* AFError.swift */; };
+		OBJ_67 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Alamofire.swift */; };
+		OBJ_68 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* DispatchQueue+Alamofire.swift */; };
+		OBJ_69 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* MultipartFormData.swift */; };
+		OBJ_70 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* NetworkReachabilityManager.swift */; };
+		OBJ_71 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Notifications.swift */; };
+		OBJ_72 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* ParameterEncoding.swift */; };
+		OBJ_73 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Request.swift */; };
+		OBJ_74 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* Response.swift */; };
+		OBJ_75 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* ResponseSerialization.swift */; };
+		OBJ_76 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Result.swift */; };
+		OBJ_77 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* ServerTrustPolicy.swift */; };
+		OBJ_78 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* SessionDelegate.swift */; };
+		OBJ_79 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* SessionManager.swift */; };
+		OBJ_80 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* TaskDelegate.swift */; };
+		OBJ_81 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Timeline.swift */; };
+		OBJ_82 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		672775481FD7CFC3004503EC /* PBXContainerItemProxy */ = {
+		677D0CEC1FDF32180049F8A7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -45,44 +44,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		678D4F801FD8A39500A6CCD9 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
-		678D4F831FD8A67100A6CCD9 /* Leaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
-		679B30D11FDDE04C00548F84 /* LeaderboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LeaderboardTests.swift; path = Tests/LeaderboardTests.swift; sourceTree = "<group>"; };
-		679B30D31FDDE96F00548F84 /* CompletionDayLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionDayLevel.swift; sourceTree = "<group>"; };
-		"AdventBot::AdventBot::Product" /* AdventOfCodeSlackbot */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = AdventOfCodeSlackbot; sourceTree = BUILT_PRODUCTS_DIR; };
+		"AdventOfCodeSlackbot::AdventOfCodeSlackbot::Product" /* AdventOfCodeSlackbot */ = {isa = PBXFileReference; lastKnownFileType = text; path = AdventOfCodeSlackbot; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Alamofire::Alamofire::Product" /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_13 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/donnalea/Development/AdventBot/.build/checkouts/Alamofire.git-6801331143877184500/Package.swift"; sourceTree = "<group>"; };
-		OBJ_14 /* AFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
-		OBJ_15 /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
-		OBJ_16 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		OBJ_17 /* MultipartFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
-		OBJ_18 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		OBJ_19 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		OBJ_20 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
-		OBJ_21 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		OBJ_22 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		OBJ_23 /* ResponseSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
-		OBJ_24 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		OBJ_25 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		OBJ_26 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
-		OBJ_27 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		OBJ_28 /* TaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
-		OBJ_29 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
-		OBJ_30 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		OBJ_10 /* Leaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
+		OBJ_11 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		OBJ_12 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		OBJ_16 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/donnalea/Development/AdventOfCodeSlackbot/.build/checkouts/Alamofire.git-6801331143877184500/Package.swift"; sourceTree = "<group>"; };
+		OBJ_17 /* AFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
+		OBJ_18 /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		OBJ_19 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		OBJ_20 /* MultipartFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		OBJ_21 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		OBJ_22 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		OBJ_23 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		OBJ_24 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		OBJ_25 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		OBJ_26 /* ResponseSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		OBJ_27 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		OBJ_28 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		OBJ_29 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		OBJ_30 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		OBJ_31 /* TaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
+		OBJ_32 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		OBJ_33 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		OBJ_9 /* CompletionDayLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionDayLevel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_52 /* Frameworks */ = {
+		OBJ_58 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_53 /* Alamofire.framework in Frameworks */,
+				OBJ_59 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_77 /* Frameworks */ = {
+		OBJ_83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
@@ -92,66 +90,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_10 /* Tests */ = {
+		OBJ_13 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				679B30D11FDDE04C00548F84 /* LeaderboardTests.swift */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_11 /* Dependencies */ = {
+		OBJ_14 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_12 /* Alamofire 4.6.0 */,
+				OBJ_15 /* Alamofire 4.6.0 */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
-		OBJ_12 /* Alamofire 4.6.0 */ = {
+		OBJ_15 /* Alamofire 4.6.0 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_13 /* Package.swift */,
-				OBJ_14 /* AFError.swift */,
-				OBJ_15 /* Alamofire.swift */,
-				OBJ_16 /* DispatchQueue+Alamofire.swift */,
-				OBJ_17 /* MultipartFormData.swift */,
-				OBJ_18 /* NetworkReachabilityManager.swift */,
-				OBJ_19 /* Notifications.swift */,
-				OBJ_20 /* ParameterEncoding.swift */,
-				OBJ_21 /* Request.swift */,
-				OBJ_22 /* Response.swift */,
-				OBJ_23 /* ResponseSerialization.swift */,
-				OBJ_24 /* Result.swift */,
-				OBJ_25 /* ServerTrustPolicy.swift */,
-				OBJ_26 /* SessionDelegate.swift */,
-				OBJ_27 /* SessionManager.swift */,
-				OBJ_28 /* TaskDelegate.swift */,
-				OBJ_29 /* Timeline.swift */,
-				OBJ_30 /* Validation.swift */,
+				OBJ_16 /* Package.swift */,
+				OBJ_17 /* AFError.swift */,
+				OBJ_18 /* Alamofire.swift */,
+				OBJ_19 /* DispatchQueue+Alamofire.swift */,
+				OBJ_20 /* MultipartFormData.swift */,
+				OBJ_21 /* NetworkReachabilityManager.swift */,
+				OBJ_22 /* Notifications.swift */,
+				OBJ_23 /* ParameterEncoding.swift */,
+				OBJ_24 /* Request.swift */,
+				OBJ_25 /* Response.swift */,
+				OBJ_26 /* ResponseSerialization.swift */,
+				OBJ_27 /* Result.swift */,
+				OBJ_28 /* ServerTrustPolicy.swift */,
+				OBJ_29 /* SessionDelegate.swift */,
+				OBJ_30 /* SessionManager.swift */,
+				OBJ_31 /* TaskDelegate.swift */,
+				OBJ_32 /* Timeline.swift */,
+				OBJ_33 /* Validation.swift */,
 			);
 			name = "Alamofire 4.6.0";
 			path = ".build/checkouts/Alamofire.git-6801331143877184500/Source";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_31 /* Products */ = {
+		OBJ_34 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"AdventBot::AdventBot::Product" /* AdventOfCodeSlackbot */,
+				"AdventOfCodeSlackbot::AdventOfCodeSlackbot::Product" /* AdventOfCodeSlackbot */,
 				"Alamofire::Alamofire::Product" /* Alamofire.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 = {
+		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_10 /* Tests */,
-				OBJ_11 /* Dependencies */,
-				OBJ_31 /* Products */,
+				OBJ_13 /* Tests */,
+				OBJ_14 /* Dependencies */,
+				OBJ_34 /* Products */,
 			);
+			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -165,10 +163,10 @@
 		OBJ_8 /* AdventOfCodeSlackbot */ = {
 			isa = PBXGroup;
 			children = (
-				678D4F801FD8A39500A6CCD9 /* Member.swift */,
-				679B30D31FDDE96F00548F84 /* CompletionDayLevel.swift */,
-				OBJ_9 /* main.swift */,
-				678D4F831FD8A67100A6CCD9 /* Leaderboard.swift */,
+				OBJ_9 /* CompletionDayLevel.swift */,
+				OBJ_10 /* Leaderboard.swift */,
+				OBJ_11 /* Member.swift */,
+				OBJ_12 /* main.swift */,
 			);
 			name = AdventOfCodeSlackbot;
 			path = Sources/AdventOfCodeSlackbot;
@@ -177,43 +175,43 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		"AdventBot::AdventBot" /* AdventOfCodeSlackbot */ = {
+		"AdventOfCodeSlackbot::AdventOfCodeSlackbot" /* AdventOfCodeSlackbot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_47 /* Build configuration list for PBXNativeTarget "AdventOfCodeSlackbot" */;
+			buildConfigurationList = OBJ_50 /* Build configuration list for PBXNativeTarget "AdventOfCodeSlackbot" */;
 			buildPhases = (
-				OBJ_50 /* Sources */,
-				OBJ_52 /* Frameworks */,
+				OBJ_53 /* Sources */,
+				OBJ_58 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_54 /* PBXTargetDependency */,
+				OBJ_60 /* PBXTargetDependency */,
 			);
 			name = AdventOfCodeSlackbot;
-			productName = AdventBot;
-			productReference = "AdventBot::AdventBot::Product" /* AdventOfCodeSlackbot */;
+			productName = AdventOfCodeSlackbot;
+			productReference = "AdventOfCodeSlackbot::AdventOfCodeSlackbot::Product" /* AdventOfCodeSlackbot */;
 			productType = "com.apple.product-type.tool";
 		};
-		"AdventBot::SwiftPMPackageDescription" /* AdventOfCodeSlackbotPackageDescription */ = {
+		"AdventOfCodeSlackbot::SwiftPMPackageDescription" /* AdventOfCodeSlackbotPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_35 /* Build configuration list for PBXNativeTarget "AdventOfCodeSlackbotPackageDescription" */;
+			buildConfigurationList = OBJ_38 /* Build configuration list for PBXNativeTarget "AdventOfCodeSlackbotPackageDescription" */;
 			buildPhases = (
-				OBJ_38 /* Sources */,
+				OBJ_41 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = AdventOfCodeSlackbotPackageDescription;
-			productName = AdventBotPackageDescription;
+			productName = AdventOfCodeSlackbotPackageDescription;
 			productType = "com.apple.product-type.framework";
 		};
 		"Alamofire::Alamofire" /* Alamofire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_56 /* Build configuration list for PBXNativeTarget "Alamofire" */;
+			buildConfigurationList = OBJ_62 /* Build configuration list for PBXNativeTarget "Alamofire" */;
 			buildPhases = (
-				OBJ_59 /* Sources */,
-				OBJ_77 /* Frameworks */,
+				OBJ_65 /* Sources */,
+				OBJ_83 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,9 +224,9 @@
 		};
 		"Alamofire::SwiftPMPackageDescription" /* AlamofirePackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_41 /* Build configuration list for PBXNativeTarget "AlamofirePackageDescription" */;
+			buildConfigurationList = OBJ_44 /* Build configuration list for PBXNativeTarget "AlamofirePackageDescription" */;
 			buildPhases = (
-				OBJ_44 /* Sources */,
+				OBJ_47 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -253,79 +251,78 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5;
-			productRefGroup = OBJ_31 /* Products */;
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_34 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"AdventBot::SwiftPMPackageDescription" /* AdventOfCodeSlackbotPackageDescription */,
+				"AdventOfCodeSlackbot::SwiftPMPackageDescription" /* AdventOfCodeSlackbotPackageDescription */,
 				"Alamofire::SwiftPMPackageDescription" /* AlamofirePackageDescription */,
-				"AdventBot::AdventBot" /* AdventOfCodeSlackbot */,
+				"AdventOfCodeSlackbot::AdventOfCodeSlackbot" /* AdventOfCodeSlackbot */,
 				"Alamofire::Alamofire" /* Alamofire */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_38 /* Sources */ = {
+		OBJ_41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_39 /* Package.swift in Sources */,
+				OBJ_42 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_44 /* Sources */ = {
+		OBJ_47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_45 /* Package.swift in Sources */,
+				OBJ_48 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_50 /* Sources */ = {
+		OBJ_53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				679B30D51FDDEA9C00548F84 /* CompletionDayLevel.swift in Sources */,
-				OBJ_51 /* main.swift in Sources */,
-				679B30D21FDDE04C00548F84 /* LeaderboardTests.swift in Sources */,
-				6746F06E1FDB4DC7003CC22D /* Leaderboard.swift in Sources */,
-				678D4F821FD8A63200A6CCD9 /* Member.swift in Sources */,
+				OBJ_54 /* CompletionDayLevel.swift in Sources */,
+				OBJ_55 /* Leaderboard.swift in Sources */,
+				OBJ_56 /* Member.swift in Sources */,
+				OBJ_57 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_59 /* Sources */ = {
+		OBJ_65 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_60 /* AFError.swift in Sources */,
-				OBJ_61 /* Alamofire.swift in Sources */,
-				OBJ_62 /* DispatchQueue+Alamofire.swift in Sources */,
-				OBJ_63 /* MultipartFormData.swift in Sources */,
-				OBJ_64 /* NetworkReachabilityManager.swift in Sources */,
-				OBJ_65 /* Notifications.swift in Sources */,
-				OBJ_66 /* ParameterEncoding.swift in Sources */,
-				OBJ_67 /* Request.swift in Sources */,
-				OBJ_68 /* Response.swift in Sources */,
-				OBJ_69 /* ResponseSerialization.swift in Sources */,
-				OBJ_70 /* Result.swift in Sources */,
-				OBJ_71 /* ServerTrustPolicy.swift in Sources */,
-				OBJ_72 /* SessionDelegate.swift in Sources */,
-				OBJ_73 /* SessionManager.swift in Sources */,
-				OBJ_74 /* TaskDelegate.swift in Sources */,
-				OBJ_75 /* Timeline.swift in Sources */,
-				OBJ_76 /* Validation.swift in Sources */,
+				OBJ_66 /* AFError.swift in Sources */,
+				OBJ_67 /* Alamofire.swift in Sources */,
+				OBJ_68 /* DispatchQueue+Alamofire.swift in Sources */,
+				OBJ_69 /* MultipartFormData.swift in Sources */,
+				OBJ_70 /* NetworkReachabilityManager.swift in Sources */,
+				OBJ_71 /* Notifications.swift in Sources */,
+				OBJ_72 /* ParameterEncoding.swift in Sources */,
+				OBJ_73 /* Request.swift in Sources */,
+				OBJ_74 /* Response.swift in Sources */,
+				OBJ_75 /* ResponseSerialization.swift in Sources */,
+				OBJ_76 /* Result.swift in Sources */,
+				OBJ_77 /* ServerTrustPolicy.swift in Sources */,
+				OBJ_78 /* SessionDelegate.swift in Sources */,
+				OBJ_79 /* SessionManager.swift in Sources */,
+				OBJ_80 /* TaskDelegate.swift in Sources */,
+				OBJ_81 /* Timeline.swift in Sources */,
+				OBJ_82 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_54 /* PBXTargetDependency */ = {
+		OBJ_60 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Alamofire::Alamofire" /* Alamofire */;
-			targetProxy = 672775481FD7CFC3004503EC /* PBXContainerItemProxy */;
+			targetProxy = 677D0CEC1FDF32180049F8A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -345,32 +342,21 @@
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
-		OBJ_36 /* Debug */ = {
+		OBJ_39 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
 				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				PRODUCT_NAME = AdventOfCodeSlackbotPackageDescription;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
-		};
-		OBJ_37 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				PRODUCT_NAME = AdventOfCodeSlackbotPackageDescription;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
 		};
 		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -385,14 +371,23 @@
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
-		OBJ_42 /* Debug */ = {
+		OBJ_40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -401,7 +396,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_43 /* Release */ = {
+		OBJ_46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -410,7 +405,7 @@
 			};
 			name = Release;
 		};
-		OBJ_48 /* Debug */ = {
+		OBJ_51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -422,15 +417,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_NAME = AdventOfCodeSlackbot;
 				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
 				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = AdventBot;
+				TARGET_NAME = AdventOfCodeSlackbot;
 			};
 			name = Debug;
 		};
-		OBJ_49 /* Release */ = {
+		OBJ_52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -442,15 +436,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_NAME = AdventOfCodeSlackbot;
 				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
 				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = AdventBot;
+				TARGET_NAME = AdventOfCodeSlackbot;
 			};
 			name = Release;
 		};
-		OBJ_57 /* Debug */ = {
+		OBJ_63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -472,7 +465,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_58 /* Release */ = {
+		OBJ_64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -506,38 +499,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_35 /* Build configuration list for PBXNativeTarget "AdventOfCodeSlackbotPackageDescription" */ = {
+		OBJ_38 /* Build configuration list for PBXNativeTarget "AdventOfCodeSlackbotPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_36 /* Debug */,
-				OBJ_37 /* Release */,
+				OBJ_39 /* Debug */,
+				OBJ_40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_41 /* Build configuration list for PBXNativeTarget "AlamofirePackageDescription" */ = {
+		OBJ_44 /* Build configuration list for PBXNativeTarget "AlamofirePackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_42 /* Debug */,
-				OBJ_43 /* Release */,
+				OBJ_45 /* Debug */,
+				OBJ_46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_47 /* Build configuration list for PBXNativeTarget "AdventOfCodeSlackbot" */ = {
+		OBJ_50 /* Build configuration list for PBXNativeTarget "AdventOfCodeSlackbot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_48 /* Debug */,
-				OBJ_49 /* Release */,
+				OBJ_51 /* Debug */,
+				OBJ_52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_56 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+		OBJ_62 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_57 /* Debug */,
-				OBJ_58 /* Release */,
+				OBJ_63 /* Debug */,
+				OBJ_64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
