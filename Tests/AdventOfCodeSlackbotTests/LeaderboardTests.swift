@@ -5,11 +5,79 @@
 //  Created by Donna McCulloch on 10/12/17.
 //
 
-import Foundation
 import XCTest
 @testable import AdventOfCodeSlackbotCore
 
 class LeaderboardTests: XCTestCase {
+
+  // MARK: - Properties
+  let oneMemberNoStarsDictionary: JSONDictionary = [
+    "event": "2017",
+    "owner_id": "199866",
+    "members": [
+      "199866": [
+        "global_score": "0",
+        "id": "199866",
+        "completion_day_level": [],
+        "last_star_ts": "1969-12-31T19:00:00-0500",
+        "local_score": "0",
+        "name": "Sakchai",
+        "stars": "0",
+      ]]]
+
+  let twoMembersNoStarsDictionary: JSONDictionary = [
+    "event": "2017",
+    "owner_id": "199866",
+    "members": [
+      "199866": [
+        "global_score": "0",
+        "id": "199866",
+        "completion_day_level": [],
+        "last_star_ts": "1969-12-31T19:00:00-0500",
+        "local_score": "0",
+        "name": "Sakchai",
+        "stars": "0",
+      ],
+      "199916": [
+        "global_score": "0",
+        "id": "199916",
+        "completion_day_level": [],
+        "last_star_ts": "1969-12-31T19:00:00-0500",
+        "local_score": "0",
+        "name": "Madhav",
+        "stars": "0",
+      ]]]
+  let threeMembersNoStarsDictionary: JSONDictionary = [
+    "event": "2017",
+    "owner_id": "199866",
+    "members": [
+      "199866": [
+        "global_score": "0",
+        "id": "199866",
+        "completion_day_level": [],
+        "last_star_ts": "1969-12-31T19:00:00-0500",
+        "local_score": "0",
+        "name": "Sakchai",
+        "stars": "0",
+      ],
+      "199916": [
+        "global_score": "0",
+        "id": "199916",
+        "completion_day_level": [],
+        "last_star_ts": "1969-12-31T19:00:00-0500",
+        "local_score": "0",
+        "name": "Madhav",
+        "stars": "0",
+      ],
+      "199958": [
+        "global_score": "0",
+        "id": "199958",
+        "completion_day_level": [],
+        "last_star_ts": "1969-12-31T19:00:00-0500",
+        "local_score": "0",
+        "name": "Jin",
+        "stars": "0",
+      ]]]
 
   override func setUp() {
     super.setUp()
@@ -22,209 +90,133 @@ class LeaderboardTests: XCTestCase {
   }
 
   func testEquateIdentical() {
-    let dictionary: [String: Any] = [
-      "event": "2017",
-      "owner_id": "199866",
-      "members": [
-        "199866": [
-          "global_score": "0",
-          "id": "199866",
-          "last_star_ts": "2017-12-06T03:00:12-0500",
-          "local_score": "24",
-          "name": "Sakchai",
-          "stars": "10",
-        ],
-        "199916": [
-          "global_score": "0",
-          "id": "199916",
-          "last_star_ts": "2017-12-11T02:23:01-0500",
-          "local_score": "77",
-          "name": "Madhav",
-          "stars": "22",
-        ]]]
-    let leaderboard1 = Leaderboard(dictionary: dictionary)
-    let leaderboard2 = Leaderboard(dictionary: dictionary)
+
+    let leaderboard1 = Leaderboard(dictionary: threeMembersNoStarsDictionary)
+    let leaderboard2 = Leaderboard(dictionary: threeMembersNoStarsDictionary)
     let leaderboardsEquate = leaderboard1 == leaderboard2
     let membersEquate = leaderboard1.members == leaderboard2.members
-    XCTAssertEqual(leaderboardsEquate, true)
-    XCTAssertEqual(membersEquate, true)
+    XCTAssertTrue(leaderboardsEquate)
+    XCTAssertTrue(membersEquate)
   }
 
   func testEquateNewMembers() {
-    // Leaderboard with no star completion of 2 members.
-    let dictionary1: [String: Any] = [
-      "event": "2017",
-      "owner_id": "199866",
-      "members": [
-        "199866": [
-          "global_score": "0",
-          "id": "199866",
-          "last_star_ts": "2017-12-06T03:00:12-0500",
-          "local_score": "24",
-          "name": "Sakchai",
-          "stars": "10",
-        ],
-        "199916": [
-          "global_score": "0",
-          "id": "199916",
-          "last_star_ts": "2017-12-11T02:23:01-0500",
-          "local_score": "77",
-          "name": "Madhav",
-          "stars": "22",
-    ]]]
-    let dictionary2: [String: Any] = [
-      "event": "2017",
-      "owner_id": "199866",
-      "members": [
-        "199866": [
-          "global_score": "0",
-          "id": "199866",
-          "last_star_ts": "2017-12-06T03:00:12-0500",
-          "local_score": "24",
-          "name": "Sakchai",
-          "stars": "10",
-        ],
-        "199916": [
-          "global_score": "0",
-          "id": "199916",
-          "last_star_ts": "2017-12-11T02:23:01-0500",
-          "local_score": "77",
-          "name": "Madhav",
-          "stars": "22",
-        ],
-        "199958": [
-          "global_score": "0",
-          "id": "199958",
-          "last_star_ts": "2017-12-11T00:12:42-0500",
-          "local_score": "102",
-          "name": "Jin",
-          "stars": "22",
-        ]]]
-
-    let leaderboard1 = Leaderboard(dictionary: dictionary1)
-    let leaderboard2 = Leaderboard(dictionary: dictionary2)
+    let leaderboard1 = Leaderboard(dictionary: oneMemberNoStarsDictionary)
+    let leaderboard2 = Leaderboard(dictionary: threeMembersNoStarsDictionary)
     let leaderboardsEquate = leaderboard1 == leaderboard2
     let membersEquate = leaderboard1.members == leaderboard2.members
-    XCTAssertEqual(leaderboardsEquate, false)
-    XCTAssertEqual(membersEquate, false)
+    XCTAssertFalse(leaderboardsEquate)
+    XCTAssertFalse(membersEquate)
   }
 
   func testEquateLessMembers() {
-    let dictionary1: [String: Any] = [
+    let leaderboard1 = Leaderboard(dictionary: threeMembersNoStarsDictionary)
+    let leaderboard2 = Leaderboard(dictionary: twoMembersNoStarsDictionary)
+    let leaderboardsEquate = leaderboard1 == leaderboard2
+    let membersEquate = leaderboard1.members == leaderboard2.members
+    XCTAssertFalse(leaderboardsEquate)
+    XCTAssertFalse(membersEquate)
+  }
+
+  func testEquateDifferentMember() {
+    let dictionary: JSONDictionary = [
       "event": "2017",
       "owner_id": "199866",
       "members": [
         "199866": [
           "global_score": "0",
           "id": "199866",
-          "last_star_ts": "2017-12-06T03:00:12-0500",
-          "local_score": "24",
+          "completion_day_level": [],
+          "last_star_ts": "1969-12-31T19:00:00-0500",
+          "local_score": "0",
           "name": "Sakchai",
-          "stars": "10",
+          "stars": "0",
         ],
         "199916": [
           "global_score": "0",
-          "id": "199916",
-          "last_star_ts": "2017-12-11T02:23:01-0500",
-          "local_score": "77",
-          "name": "Madhav",
-          "stars": "22",
+          "id": "199915",
+          "completion_day_level": [],
+          "last_star_ts": "1969-12-31T19:00:00-0500",
+          "local_score": "0",
+          "name": "Cael",
+          "stars": "0",
         ]]]
-    let dictionary2: [String: Any] = [
-      "event": "2017",
-      "owner_id": "199866",
-      "members": [
-        "199866": [
-          "global_score": "0",
-          "id": "199866",
-          "last_star_ts": "2017-12-06T03:00:12-0500",
-          "local_score": "24",
-          "name": "Sakchai",
-          "stars": "10",
-        ]]]
-    let leaderboard1 = Leaderboard(dictionary: dictionary1)
-    let leaderboard2 = Leaderboard(dictionary: dictionary2)
-    let leaderboardsEquate = leaderboard1 == leaderboard2
-    let membersEquate = leaderboard1.members == leaderboard2.members
-    XCTAssertEqual(leaderboardsEquate, false)
-    XCTAssertEqual(membersEquate, false)
+    let leaderboard1 = Leaderboard(dictionary: twoMembersNoStarsDictionary)
+    let leaderboard2 = Leaderboard(dictionary: dictionary)
+    let equates = leaderboard1 == leaderboard2
+    XCTAssertFalse(equates)
+
   }
 
   func testEquateNewEvent() {
-    let dictionary1: [String: Any] = [
-      "event": "2017",
-      "owner_id": "199866",
-      "members": [
-        "199866": [
-          "global_score": "0",
-          "id": "199866",
-          "last_star_ts": "2017-12-06T03:00:12-0500",
-          "local_score": "24",
-          "name": "Sakchai",
-          "stars": "10",
-        ]]]
-    let dictionary2: [String: Any] = [
+    let dictionary: JSONDictionary = [
       "event": "2018",
       "owner_id": "199866",
       "members": [
         "199866": [
           "global_score": "0",
           "id": "199866",
-          "last_star_ts": "2017-12-06T03:00:12-0500",
-          "local_score": "24",
+          "completion_day_level": [],
+          "last_star_ts": "1969-12-31T19:00:00-0500",
+          "local_score": "0",
           "name": "Sakchai",
-          "stars": "10",
+          "stars": "0",
         ]]]
-    let leaderboard1 = Leaderboard(dictionary: dictionary1)
-    let leaderboard2 = Leaderboard(dictionary: dictionary2)
+    let leaderboard1 = Leaderboard(dictionary: oneMemberNoStarsDictionary)
+    let leaderboard2 = Leaderboard(dictionary: dictionary)
     let equates = leaderboard1 == leaderboard2
-    XCTAssertEqual(equates, false)
+    XCTAssertFalse(equates)
   }
 
   func testEquateNewOwner() {
-    let dictionary1: [String: Any] = [
-      "event": "2017",
-      "owner_id": "199866",
-      "members": [
-        "199866": [
-          "global_score": "0",
-          "id": "199866",
-          "last_star_ts": "2017-12-06T03:00:12-0500",
-          "local_score": "24",
-          "name": "Sakchai",
-          "stars": "10",
-        ],
-        "199916": [
-          "global_score": "0",
-          "id": "199916",
-          "last_star_ts": "2017-12-11T02:23:01-0500",
-          "local_score": "77",
-          "name": "Madhav",
-          "stars": "22",
-        ]]]
-    let dictionary2: [String: Any] = [
+    let dictionary: JSONDictionary = [
       "event": "2017",
       "owner_id": "199916",
       "members": [
         "199866": [
           "global_score": "0",
           "id": "199866",
-          "last_star_ts": "2017-12-06T03:00:12-0500",
-          "local_score": "24",
+          "completion_day_level": [],
+          "last_star_ts": "1969-12-31T19:00:00-0500",
+          "local_score": "0",
           "name": "Sakchai",
-          "stars": "10",
+          "stars": "0",
         ],
         "199916": [
           "global_score": "0",
           "id": "199916",
-          "last_star_ts": "2017-12-11T02:23:01-0500",
-          "local_score": "77",
+          "completion_day_level": [],
+          "last_star_ts": "1969-12-31T19:00:00-0500",
+          "local_score": "0",
           "name": "Madhav",
-          "stars": "22",
+          "stars": "0",
         ]]]
-    let leaderboard1 = Leaderboard(dictionary: dictionary1)
-    let leaderboard2 = Leaderboard(dictionary: dictionary2)
+    let leaderboard1 = Leaderboard(dictionary: twoMembersNoStarsDictionary)
+    let leaderboard2 = Leaderboard(dictionary: dictionary)
     let equates = leaderboard1 == leaderboard2
-    XCTAssertEqual(equates, false)
+    XCTAssertFalse(equates)
+  }
+
+  func testMemberGetsNewStar() {
+    let dictionary: JSONDictionary = [
+      "event": "2017",
+      "owner_id": "199866",
+      "members": [
+        "199866": [
+          "global_score": "0",
+          "id": "199866",
+          "last_star_ts": "2017-12-03T02:29:28-0500",
+          "local_score": "0",
+          "name": "Sakchai",
+          "stars": "2",
+          "completion_day_level": [
+            "2": [
+              "1": ["get_star_ts":"2017-12-03T02:02:32-0500"],
+              "2": ["get_star_ts":"2017-12-03T02:29:28-0500"],
+          ]]]]]
+    let leaderboard1 = Leaderboard(dictionary: oneMemberNoStarsDictionary)
+    let leaderboard2 = Leaderboard(dictionary: dictionary)
+    let equates = leaderboard1 == leaderboard2
+    print("equates: \(equates)")
+    XCTAssertFalse(equates)
   }
 }
