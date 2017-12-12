@@ -5,7 +5,9 @@
 //  Created by Donna McCulloch on 10/12/17.
 //
 
+import Foundation
 import XCTest
+@testable import AdventOfCodeSlackbotCore
 
 class LeaderboardTests: XCTestCase {
 
@@ -18,29 +20,65 @@ class LeaderboardTests: XCTestCase {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     super.tearDown()
   }
-/*
+
   func testLeaderboardCompareNewMembers() {
-    // Leaderboard with no star completion of 5 members.
-    let leaderboardJson1 = """
-{"members":{"199916":{"completion_day_level":{},"local_score":69,"name":"Sakchai","id":"199916","global_score":0,"last_star_ts":"2017-12-10T03:42:55-0500","stars":20},"199958":{"last_star_ts":"2017-12-10T01:30:37-0500","stars":20,"completion_day_level":{},"local_score":92,"name":Madhav","id":"199958","global_score":0},"245475":{"global_score":0,"local_score":16,"id":"245475","name":"Cael","completion_day_level":{},"stars":6,"last_star_ts":"2017-12-07T01:44:27-0500"},"199866":{"completion_day_level":{},"global_score":0,"id":"199866","local_score":24,"name":"Jin","stars":10,"last_star_ts":"2017-12-06T03:00:12-0500"},"227379":{"stars":14,"last_star_ts":"2017-12-07T19:06:59-0500","global_score":0,"local_score":49,"id":"227379","name":"Grizel","completion_day_level":{}}},"event":"2017","owner_id":"199958"}
-"""
+    // Leaderboard with no star completion of 2 members.
 
-    let leaderboardJson2 = """
-{"members":{"199916":{"completion_day_level":{},"local_score":69,"name":"Sakchai","id":"199916","global_score":0,"last_star_ts":"2017-12-10T03:42:55-0500","stars":20},"199958":{"last_star_ts":"2017-12-10T01:30:37-0500","stars":20,"completion_day_level":{},"local_score":92,"name":Madhav","id":"199958","global_score":0},"245475":{"global_score":0,"local_score":16,"id":"245475","name":"Cael","completion_day_level":{},"stars":6,"last_star_ts":"2017-12-07T01:44:27-0500"},"199866":{"completion_day_level":{},"global_score":0,"id":"199866","local_score":24,"name":"Jin","stars":10,"last_star_ts":"2017-12-06T03:00:12-0500"},"227379":{"stars":14,"last_star_ts":"2017-12-07T19:06:59-0500","global_score":0,"local_score":49,"id":"227379","name":"Grizel","completion_day_level":{}}},"event":"2017","owner_id":"199958"}
-"""
-    let leaderboard1 = Leaderboard()
-  }
-*/
-  func testExample() {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-  }
+    let leaderboardDict1: [String: Any] = [
+      "event": "2017",
+      "owner_id": "199958",
+      "members": [
+        "199866": [
+          "global_score": "0",
+          "id": "199866",
+          "last_star_ts": "2017-12-06T03:00:12-0500",
+          "local_score": "24",
+          "name": "Sakchai",
+          "stars": "10",
+        ],
+        "199916": [
+          "global_score": "0",
+          "id": "199916",
+          "last_star_ts": "2017-12-11T02:23:01-0500",
+          "local_score": "77",
+          "name": "Madhav",
+          "stars": "22",
+    ]]]
+    let leaderboardDict2: [String: Any] = [
+      "event": "2017",
+      "owner_id": "199958",
+      "members": [
+        "199866": [
+          "global_score": "0",
+          "id": "199866",
+          "last_star_ts": "2017-12-06T03:00:12-0500",
+          "local_score": "24",
+          "name": "Sakchai",
+          "stars": "10",
+        ],
+        "199916": [
+          "global_score": "0",
+          "id": "199916",
+          "last_star_ts": "2017-12-11T02:23:01-0500",
+          "local_score": "77",
+          "name": "Madhav",
+          "stars": "22",
+        ],
+        "199958": [
+          "global_score": "0",
+          "id": "199958",
+          "last_star_ts": "2017-12-11T00:12:42-0500",
+          "local_score": "102",
+          "name": "Jin",
+          "stars": "22",
+        ]]]
 
-  func testPerformanceExample() {
-    // This is an example of a performance test case.
-    self.measure {
-        // Put the code you want to measure the time of here.
-    }
+    let leaderboard1 = Leaderboard(dictionary: leaderboardDict1)
+    let leaderboard2 = Leaderboard(dictionary: leaderboardDict2)
+    let leaderboardsEquate = leaderboard1 == leaderboard2
+    let membersEquate = leaderboard1.members == leaderboard2.members
+    XCTAssertEqual(leaderboardsEquate, false)
+    XCTAssertEqual(membersEquate, false)
   }
 
 }
