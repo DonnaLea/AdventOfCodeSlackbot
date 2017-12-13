@@ -5,6 +5,11 @@ import Foundation
 typealias JSONDictionary = [String : Any]
 
 public final class AdventOfCodeSlackbot {
+
+  private struct Constants {
+    static let delay = 30.0
+  }
+
   private let arguments: [String]
   private var leaderboard: Leaderboard?
 
@@ -24,11 +29,11 @@ public final class AdventOfCodeSlackbot {
     Alamofire.request("https://adventofcode.com/2017/leaderboard/private/view/199958.json", headers: headers).validate().responseJSON { response in
 
       defer {
-        print("exiting")
-        exit(EXIT_SUCCESS)
+        let when = DispatchTime.now() + Constants.delay
+        DispatchQueue.main.asyncAfter(deadline: when, execute: {
+          self.requestLeaderboardState()
+        })
       }
-
-      //    debugPrint("All Response Info: \(response)")
 
       guard response.result.isSuccess, let json = response.result.value as? JSONDictionary else {
         if let error = response.result.error {
