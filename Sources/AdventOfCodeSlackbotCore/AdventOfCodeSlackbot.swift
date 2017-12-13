@@ -6,6 +6,7 @@ typealias JSONDictionary = [String : Any]
 
 public final class AdventOfCodeSlackbot {
   private let arguments: [String]
+  private var leaderboard: Leaderboard?
 
   public init(arguments: [String] = CommandLine.arguments) {
     self.arguments = arguments
@@ -36,9 +37,29 @@ public final class AdventOfCodeSlackbot {
         return
       }
 
-//      print("json: \(json)")
+      let latestLeaderboard = Leaderboard(dictionary: json)
 
-      let leaderboard = Leaderboard(dictionary: json)
+      guard let leaderboard = self.leaderboard else {
+        // This is the first version of the leaderboard retrieved.
+        self.leaderboard = latestLeaderboard
+
+        return
+      }
+
+      if leaderboard != latestLeaderboard {
+        self.compareLeaderboardsAndNotify(lhs: leaderboard, rhs: latestLeaderboard)
+      }
+    }
+  }
+
+  func compareLeaderboardsAndNotify(lhs: Leaderboard, rhs: Leaderboard) {
+    if lhs.members != rhs.members {
+      for (key, member) in lhs.members {
+        if let rhsMember = rhs.members[key], member.stars != rhsMember.stars {
+          let starsDiff = rhsMember.stars
+          print("\(member.name) gained \(starsDiff) star(s)!")
+        }
+      }
     }
   }
 
