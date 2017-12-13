@@ -16,13 +16,13 @@ class LeaderboardTests: XCTestCase {
     "owner_id": "199866",
     "members": [
       "199866": [
-        "global_score": "0",
+        "global_score": 0,
         "id": "199866",
         "completion_day_level": [],
         "last_star_ts": "1969-12-31T19:00:00-0500",
-        "local_score": "0",
+        "local_score": 0,
         "name": "Sakchai",
-        "stars": "0",
+        "stars": 0,
       ]]]
 
   let twoMembersNoStarsDictionary: JSONDictionary = [
@@ -30,53 +30,53 @@ class LeaderboardTests: XCTestCase {
     "owner_id": "199866",
     "members": [
       "199866": [
-        "global_score": "0",
+        "global_score": 0,
         "id": "199866",
         "completion_day_level": [],
         "last_star_ts": "1969-12-31T19:00:00-0500",
-        "local_score": "0",
+        "local_score": 0,
         "name": "Sakchai",
-        "stars": "0",
+        "stars": 0,
       ],
       "199916": [
-        "global_score": "0",
+        "global_score": 0,
         "id": "199916",
         "completion_day_level": [],
         "last_star_ts": "1969-12-31T19:00:00-0500",
-        "local_score": "0",
+        "local_score": 0,
         "name": "Madhav",
-        "stars": "0",
+        "stars": 0,
       ]]]
   let threeMembersNoStarsDictionary: JSONDictionary = [
     "event": "2017",
     "owner_id": "199866",
     "members": [
       "199866": [
-        "global_score": "0",
+        "global_score": 0,
         "id": "199866",
         "completion_day_level": [],
         "last_star_ts": "1969-12-31T19:00:00-0500",
-        "local_score": "0",
+        "local_score": 0,
         "name": "Sakchai",
-        "stars": "0",
+        "stars": 0,
       ],
       "199916": [
-        "global_score": "0",
+        "global_score": 0,
         "id": "199916",
         "completion_day_level": [],
         "last_star_ts": "1969-12-31T19:00:00-0500",
-        "local_score": "0",
+        "local_score": 0,
         "name": "Madhav",
-        "stars": "0",
+        "stars": 0,
       ],
       "199958": [
-        "global_score": "0",
+        "global_score": 0,
         "id": "199958",
         "completion_day_level": [],
         "last_star_ts": "1969-12-31T19:00:00-0500",
-        "local_score": "0",
+        "local_score": 0,
         "name": "Jin",
-        "stars": "0",
+        "stars": 0,
       ]]]
 
   override func setUp() {
@@ -117,22 +117,22 @@ class LeaderboardTests: XCTestCase {
       "owner_id": "199866",
       "members": [
         "199866": [
-          "global_score": "0",
+          "global_score": 0,
           "id": "199866",
           "completion_day_level": [],
           "last_star_ts": "1969-12-31T19:00:00-0500",
-          "local_score": "0",
+          "local_score": 0,
           "name": "Sakchai",
-          "stars": "0",
+          "stars": 0,
         ],
         "199916": [
-          "global_score": "0",
+          "global_score": 0,
           "id": "199915",
           "completion_day_level": [],
           "last_star_ts": "1969-12-31T19:00:00-0500",
-          "local_score": "0",
+          "local_score": 0,
           "name": "Cael",
-          "stars": "0",
+          "stars": 0,
         ]]]
     let leaderboard1 = Leaderboard(dictionary: twoMembersNoStarsDictionary)
     let leaderboard2 = Leaderboard(dictionary: dictionary)
@@ -145,13 +145,13 @@ class LeaderboardTests: XCTestCase {
       "owner_id": "199866",
       "members": [
         "199866": [
-          "global_score": "0",
+          "global_score": 0,
           "id": "199866",
           "completion_day_level": [],
           "last_star_ts": "1969-12-31T19:00:00-0500",
-          "local_score": "0",
+          "local_score": 0,
           "name": "Sakchai",
-          "stars": "0",
+          "stars": 0,
         ]]]
     let leaderboard1 = Leaderboard(dictionary: oneMemberNoStarsDictionary)
     let leaderboard2 = Leaderboard(dictionary: dictionary)
@@ -164,22 +164,22 @@ class LeaderboardTests: XCTestCase {
       "owner_id": "199916",
       "members": [
         "199866": [
-          "global_score": "0",
+          "global_score": 0,
           "id": "199866",
           "completion_day_level": [],
           "last_star_ts": "1969-12-31T19:00:00-0500",
-          "local_score": "0",
+          "local_score": 0,
           "name": "Sakchai",
-          "stars": "0",
+          "stars": 0,
         ],
         "199916": [
-          "global_score": "0",
+          "global_score": 0,
           "id": "199916",
           "completion_day_level": [],
           "last_star_ts": "1969-12-31T19:00:00-0500",
-          "local_score": "0",
+          "local_score": 0,
           "name": "Madhav",
-          "stars": "0",
+          "stars": 0,
         ]]]
     let leaderboard1 = Leaderboard(dictionary: twoMembersNoStarsDictionary)
     let leaderboard2 = Leaderboard(dictionary: dictionary)
@@ -192,12 +192,12 @@ class LeaderboardTests: XCTestCase {
       "owner_id": "199866",
       "members": [
         "199866": [
-          "global_score": "0",
+          "global_score": 0,
           "id": "199866",
           "last_star_ts": "2017-12-03T02:29:28-0500",
-          "local_score": "0",
+          "local_score": 0,
           "name": "Sakchai",
-          "stars": "2",
+          "stars": 2,
           "completion_day_level": [
             "2": [
               "1": ["get_star_ts":"2017-12-03T02:02:32-0500"],
@@ -207,5 +207,4 @@ class LeaderboardTests: XCTestCase {
     let leaderboard2 = Leaderboard(dictionary: dictionary)
     XCTAssertNotEqual(leaderboard1, leaderboard2)
   }
-
 }

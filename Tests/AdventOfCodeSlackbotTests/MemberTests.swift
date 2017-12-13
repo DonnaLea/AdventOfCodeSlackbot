@@ -11,21 +11,21 @@ import XCTest
 class MemberTests: XCTestCase {
 
   let noStarsDictionary: JSONDictionary = [
-    "global_score": "0",
+    "global_score": 0,
     "id": "199866",
     "last_star_ts": "1969-12-31T19:00:00-0500",
-    "local_score": "0",
+    "local_score": 0,
     "name": "Sakchai",
-    "stars": "0",
+    "stars": 0,
     "completion_day_level": []
   ]
   let stars2Dictionary: JSONDictionary = [
-    "global_score": "10",
+    "global_score": 10,
     "id": "199866",
     "last_star_ts": "2017-12-03T02:29:28-0500",
-    "local_score": "50",
+    "local_score": 50,
     "name": "Sakchai",
-    "stars": "2",
+    "stars": 2,
     "completion_day_level": [
       "2": [
         "1": ["get_star_ts":"2017-12-03T02:02:32-0500"],
@@ -72,12 +72,12 @@ class MemberTests: XCTestCase {
 
   func testEquateDifferentMembers() {
     let dictionary: JSONDictionary = [
-      "global_score": "0",
+      "global_score": 0,
       "id": "199867",
       "last_star_ts": "1969-12-31T19:00:00-0500",
-      "local_score": "0",
+      "local_score": 0,
       "name": "Sakchai",
-      "stars": "0",
+      "stars": 0,
       "completion_day_level": []
     ]
     let member1 = Member(dictionary: noStarsDictionary)
@@ -93,12 +93,12 @@ class MemberTests: XCTestCase {
 
   func testEquateMemberWithDifferentGlobalScore() {
     let dictionary: JSONDictionary = [
-      "global_score": "10",
+      "global_score": 10,
       "id": "199866",
       "last_star_ts": "1969-12-31T19:00:00-0500",
-      "local_score": "0",
+      "local_score": 0,
       "name": "Sakchai",
-      "stars": "0",
+      "stars": 0,
       "completion_day_level": []
     ]
     let member1 = Member(dictionary: noStarsDictionary)
@@ -108,12 +108,12 @@ class MemberTests: XCTestCase {
 
   func testEquateMemberWithDifferentLocalScore() {
     let dictionary: JSONDictionary = [
-      "global_score": "0",
+      "global_score": 0,
       "id": "199866",
       "last_star_ts": "1969-12-31T19:00:00-0500",
-      "local_score": "10",
+      "local_score": 10,
       "name": "Sakchai",
-      "stars": "0",
+      "stars": 0,
       "completion_day_level": []
     ]
     let member1 = Member(dictionary: noStarsDictionary)
@@ -123,12 +123,12 @@ class MemberTests: XCTestCase {
 
   func testEquateMemberWithDifferentName() {
     let dictionary: JSONDictionary = [
-      "global_score": "0",
+      "global_score": 0,
       "id": "199866",
       "last_star_ts": "1969-12-31T19:00:00-0500",
-      "local_score": "0",
+      "local_score": 0,
       "name": "Cael",
-      "stars": "0",
+      "stars": 0,
       "completion_day_level": []
     ]
     let member1 = Member(dictionary: noStarsDictionary)
