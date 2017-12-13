@@ -41,26 +41,6 @@ struct Leaderboard {
       })
     }
   }
-
-  func compare(rhs: Leaderboard) {
-    if self != rhs {
-      // Process what's different.
-      if self.event != rhs.event {
-        print("Event changed to: \(rhs.event)")
-      }
-
-      // Check ownership.
-      if self.owner != rhs.owner {
-        print("Changed to leaderboard owned by: \(String(describing: rhs.owner?.name))")
-      }
-
-      // Check membership changes.
-      if self.rankedMembers != rhs.rankedMembers {
-        
-      }
-    }
-  }
-
 }
 
 // MARK: - Equatable

@@ -35,9 +35,12 @@ struct Member {
   init(dictionary: JSONDictionary) {
     id = dictionary[Keys.id] as? String ?? ""
     name = dictionary[Keys.name] as? String ?? ""
-    localScore = dictionary[Keys.localScore] as? Int ?? 0
-    globalScore = dictionary[Keys.globalScore] as? Int ?? 0
-    stars = dictionary[Keys.stars] as? Int ?? 0
+    let localScoreString = dictionary[Keys.localScore] as? String ?? "0"
+    localScore = Int(localScoreString) ?? 0
+    let globalScoreString = dictionary[Keys.globalScore] as? String ?? "0"
+    globalScore = Int(globalScoreString) ?? 0
+    let starsString = dictionary[Keys.stars] as? String ?? "0"
+    stars = Int(starsString) ?? 0
     if let dateString = dictionary[Keys.lastStarTimestamp] as? String {
       lastStarTime = dateFormatter.date(from: dateString)
     }
@@ -55,7 +58,7 @@ struct Member {
 extension Member : Equatable {}
 
 func ==(lhs: Member, rhs: Member) -> Bool {
-
+  // No need to compare the completedDays as the information in 
   return  lhs.id == rhs.id &&
           lhs.name == rhs.name &&
           lhs.localScore == rhs.localScore &&

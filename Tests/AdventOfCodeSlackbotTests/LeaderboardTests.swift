@@ -93,28 +93,22 @@ class LeaderboardTests: XCTestCase {
 
     let leaderboard1 = Leaderboard(dictionary: threeMembersNoStarsDictionary)
     let leaderboard2 = Leaderboard(dictionary: threeMembersNoStarsDictionary)
-    let leaderboardsEquate = leaderboard1 == leaderboard2
-    let membersEquate = leaderboard1.members == leaderboard2.members
-    XCTAssertTrue(leaderboardsEquate)
-    XCTAssertTrue(membersEquate)
+    XCTAssertEqual(leaderboard1, leaderboard2)
+    XCTAssertEqual(leaderboard1.members, leaderboard2.members)
   }
 
   func testEquateNewMembers() {
     let leaderboard1 = Leaderboard(dictionary: oneMemberNoStarsDictionary)
     let leaderboard2 = Leaderboard(dictionary: threeMembersNoStarsDictionary)
-    let leaderboardsEquate = leaderboard1 == leaderboard2
-    let membersEquate = leaderboard1.members == leaderboard2.members
-    XCTAssertFalse(leaderboardsEquate)
-    XCTAssertFalse(membersEquate)
+    XCTAssertNotEqual(leaderboard1, leaderboard2)
+    XCTAssertNotEqual(leaderboard1.members, leaderboard2.members)
   }
 
   func testEquateLessMembers() {
     let leaderboard1 = Leaderboard(dictionary: threeMembersNoStarsDictionary)
     let leaderboard2 = Leaderboard(dictionary: twoMembersNoStarsDictionary)
-    let leaderboardsEquate = leaderboard1 == leaderboard2
-    let membersEquate = leaderboard1.members == leaderboard2.members
-    XCTAssertFalse(leaderboardsEquate)
-    XCTAssertFalse(membersEquate)
+    XCTAssertNotEqual(leaderboard1, leaderboard2)
+    XCTAssertNotEqual(leaderboard1.members, leaderboard2.members)
   }
 
   func testEquateDifferentMember() {
@@ -142,9 +136,7 @@ class LeaderboardTests: XCTestCase {
         ]]]
     let leaderboard1 = Leaderboard(dictionary: twoMembersNoStarsDictionary)
     let leaderboard2 = Leaderboard(dictionary: dictionary)
-    let equates = leaderboard1 == leaderboard2
-    XCTAssertFalse(equates)
-
+    XCTAssertNotEqual(leaderboard1, leaderboard2)
   }
 
   func testEquateNewEvent() {
@@ -163,8 +155,7 @@ class LeaderboardTests: XCTestCase {
         ]]]
     let leaderboard1 = Leaderboard(dictionary: oneMemberNoStarsDictionary)
     let leaderboard2 = Leaderboard(dictionary: dictionary)
-    let equates = leaderboard1 == leaderboard2
-    XCTAssertFalse(equates)
+    XCTAssertNotEqual(leaderboard1, leaderboard2)
   }
 
   func testEquateNewOwner() {
@@ -192,8 +183,7 @@ class LeaderboardTests: XCTestCase {
         ]]]
     let leaderboard1 = Leaderboard(dictionary: twoMembersNoStarsDictionary)
     let leaderboard2 = Leaderboard(dictionary: dictionary)
-    let equates = leaderboard1 == leaderboard2
-    XCTAssertFalse(equates)
+    XCTAssertNotEqual(leaderboard1, leaderboard2)
   }
 
   func testMemberGetsNewStar() {
@@ -215,8 +205,7 @@ class LeaderboardTests: XCTestCase {
           ]]]]]
     let leaderboard1 = Leaderboard(dictionary: oneMemberNoStarsDictionary)
     let leaderboard2 = Leaderboard(dictionary: dictionary)
-    let equates = leaderboard1 == leaderboard2
-    print("equates: \(equates)")
-    XCTAssertFalse(equates)
+    XCTAssertNotEqual(leaderboard1, leaderboard2)
   }
+
 }
