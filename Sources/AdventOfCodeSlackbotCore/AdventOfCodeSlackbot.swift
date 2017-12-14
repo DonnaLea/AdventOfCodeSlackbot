@@ -70,7 +70,13 @@ public final class AdventOfCodeSlackbot {
       for (key, member) in lhs.members {
         if let rhsMember = rhs.members[key], member.stars != rhsMember.stars {
           let starsDiff = rhsMember.stars - member.stars
-          print("\(member.name) gained \(starsDiff) star(s)!")
+          let announcement: String
+          if starsDiff == 1 {
+            announcement = "\(member.name) gained \(starsDiff) star!"
+          } else {
+            announcement = "\(member.name) gained \(starsDiff) star(s)!"
+          }
+          print(announcement)
         }
       }
     }
