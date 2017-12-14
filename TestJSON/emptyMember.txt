@@ -1,0 +1,9 @@
+ "116750": {
+     "name": "ASDF",
+     "completion_day_level": {},
+     "global_score": 0,
+     "stars": 0,
+     "local_score": 0,
+     "last_star_ts": "1969-12-31T19:00:00-0500",
+     "id": "116750"
+   },
