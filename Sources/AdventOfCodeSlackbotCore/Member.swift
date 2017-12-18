@@ -30,6 +30,7 @@ struct Member {
   let stars: Int
   private(set) var completedDays = [Int : CompletionDayLevel]()
   private(set) var lastStarTime: Date? = nil
+  private(set) var starsByCompletionDate = [Date : Star]()
 
   // MARK: - Init
   init(dictionary: JSONDictionary) {
@@ -46,8 +47,29 @@ struct Member {
       for slice in completionDayLevels {
         let completionDayLevel = CompletionDayLevel(dictionarySlice: slice)
         completedDays[completionDayLevel.day] = completionDayLevel
+        if let timestamp = completionDayLevel.part1StarTimestamp {
+          starsByCompletionDate[timestamp] = Star(day: completionDayLevel.day, part: 1)
+        }
+        if let timestamp = completionDayLevel.part2StarTimestamp {
+          starsByCompletionDate[timestamp] = Star(day: completionDayLevel.day, part: 2)
+        }
       }
     }
+  }
+
+  func mostRecent(numStars: Int) -> [Star] {
+    var stars = [Star]()
+
+    let sortedDates = starsByCompletionDate.keys.sorted()
+    let latestDates = sortedDates.suffix(numStars)
+
+    for date in latestDates {
+      if let star = starsByCompletionDate[date] {
+        stars.append(star)
+      }
+    }
+
+    return stars
   }
 }
 

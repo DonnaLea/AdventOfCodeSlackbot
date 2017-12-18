@@ -70,16 +70,21 @@ public final class AdventOfCodeSlackbot {
       for (key, member) in lhs.members {
         if let rhsMember = rhs.members[key], member.stars != rhsMember.stars {
           let starsDiff = rhsMember.stars - member.stars
-          let announcement: String
-          if starsDiff == 1 {
-            announcement = "\(member.name) gained \(starsDiff) star!"
-          } else {
-            announcement = "\(member.name) gained \(starsDiff) star(s)!"
+          let stars = rhsMember.mostRecent(numStars: starsDiff)
+          for star in stars {
+            let announcement = "\(member.name) completed \(star)! :star2:"
+            notify(announcement: announcement)
           }
-          print(announcement)
         }
       }
     }
+  }
+
+  func notify(announcement: String, appendLeaderboard: Bool = true) {
+    let announcement = announcement + "\nSee the updated <http://adventofcode.com/2017/leaderboard/private/view/199958|leaderboard>"
+    print(announcement)
+    let parameters: Parameters = [ "text": announcement ]
+    Alamofire.request(webhookURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
   }
 
 }
