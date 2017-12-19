@@ -69,3 +69,5 @@ fastlane/test_output
 
 # AdventOfCodeSlackbot specific ignores
 AdventOfCodeSlackbot.xcodeproj
+env.dev.txt
+env.prod.txt
