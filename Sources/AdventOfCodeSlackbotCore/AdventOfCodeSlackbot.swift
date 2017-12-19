@@ -6,41 +6,50 @@ typealias JSONDictionary = [String : Any]
 
 public final class AdventOfCodeSlackbot {
 
-  private struct Constants {
-    static let delay = 30.0
-    static let productionJSONURL = "https://adventofcode.com/2017/leaderboard/private/view/199958.json"
-    static let testJSONURL = "https://adventofcodeleaderboardtest.4d63.com/044585.json" //"http://localhost:8000/leaderboard.json"
-    static let testWebhookURL = "https://hooks.slack.com/services/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"
-    static let productionWebhookURL = "https://hooks.slack.com/services/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"
+  // MARK: - Keys
+  private struct Keys {
+    static let webhook = "SLACK_WEBHOOK"
+    static let cookie = "ADVENT_COOKIE"
+    static let json = "ADVENT_JSON"
   }
 
-  private let test = true
+  // MARK: - Constants
+  private struct Constants {
+    static let delay = 60.0
+  }
 
   private let jsonURL: String
   private let webhookURL: String
+  private let cookie: String
 
   private let arguments: [String]
   private var leaderboard: Leaderboard?
 
-  public init(arguments: [String] = CommandLine.arguments) {
+  public init?(arguments: [String] = CommandLine.arguments) {
     self.arguments = arguments
-    jsonURL = test ? Constants.testJSONURL : Constants.productionJSONURL
-    webhookURL = test ? Constants.testWebhookURL : Constants.productionWebhookURL
+
+    guard let webhook = ProcessInfo.processInfo.environment[Keys.webhook],
+      let json = ProcessInfo.processInfo.environment[Keys.json],
+      let cookie = ProcessInfo.processInfo.environment[Keys.cookie] else {
+        print("Could not find all environment variables: \(Keys.webhook), \(Keys.json), \(Keys.cookie)")
+        return nil
+    }
+
+    jsonURL = json
+    webhookURL = webhook
+    self.cookie = cookie
   }
 
   public func run() throws {
     print("Hello Advent Of Code!")
     requestLeaderboardState()
     dispatchMain() // Does not return. Need to exit the application elsewhere.
-
   }
 
   func requestLeaderboardState() {
     print("requestingLeaderboardState")
-    let headers = ["cookie": "session=53616c7465645f5f18a31b842dab491425605682234662c8d5000822d9a1d3fead1135d21f0b1ac5f9d26bac2aff662f"]
+    let headers = ["cookie": cookie]
     Alamofire.request(jsonURL, headers: headers).validate().responseJSON { response in
-
-      print(response)
 
       defer {
         print("waiting \(Constants.delay) seconds before requesting")
