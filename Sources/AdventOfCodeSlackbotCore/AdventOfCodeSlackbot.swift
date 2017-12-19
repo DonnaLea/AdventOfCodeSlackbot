@@ -27,6 +27,7 @@ public final class AdventOfCodeSlackbot {
 
   public init?(arguments: [String] = CommandLine.arguments) {
     self.arguments = arguments
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
 
     guard let webhook = ProcessInfo.processInfo.environment[Keys.webhook],
       let json = ProcessInfo.processInfo.environment[Keys.json],
