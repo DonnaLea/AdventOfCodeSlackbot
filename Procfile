@@ -1,1 +1,1 @@
-slackbot: .build/release/AdventOfCodeSlackbot
+adventofcode: .build/release/AdventOfCodeSlackbot
