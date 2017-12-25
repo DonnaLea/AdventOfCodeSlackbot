@@ -1,4 +1,5 @@
 import Foundation
+import Dispatch
 
 public final class AdventOfCodeSlackbot {
 
@@ -42,6 +43,7 @@ public final class AdventOfCodeSlackbot {
     print("Hello Advent Of Code!")
     requestLeaderboardState()
     dispatchMain() // Does not return. Need to exit the application elsewhere.
+//    RunLoop.main.run()
   }
 
   func requestLeaderboardState() {
