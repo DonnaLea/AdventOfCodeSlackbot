@@ -43,15 +43,14 @@ public final class AdventOfCodeSlackbot {
     print("Hello Advent Of Code!")
     requestLeaderboardState()
     dispatchMain() // Does not return. Need to exit the application elsewhere.
-//    RunLoop.main.run()
   }
 
   func requestLeaderboardState() {
     print("requestingLeaderboardState")
     var request = URLRequest(url: jsonURL)
     request.addValue(cookie, forHTTPHeaderField: Constants.cookie)
-
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    let session = URLSession(configuration: .default)
+    let task = session.dataTask(with: request) { data, response, error in
       defer {
         print("waiting \(Constants.delay) seconds before requesting")
         let when = DispatchTime.now() + Constants.delay
@@ -123,7 +122,8 @@ public final class AdventOfCodeSlackbot {
     request.httpMethod = "POST"
     let parameters = [ "text": announcement ]
     request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    let session = URLSession(configuration: .default)
+    let task = session.dataTask(with: request) { data, response, error in
       guard data != nil, error == nil else {                                                 // check for fundamental networking error
         print("error=\(String(describing: error))")
         return
