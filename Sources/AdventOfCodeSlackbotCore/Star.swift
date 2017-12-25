@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Star {
+struct Star : Codable {
   let day: Int
   let part: Int
 }

@@ -1,8 +1,4 @@
-import Alamofire
 import Foundation
-
-// MARK: - Type Alias'
-typealias JSONDictionary = [String : Any]
 
 public final class AdventOfCodeSlackbot {
 
@@ -16,10 +12,11 @@ public final class AdventOfCodeSlackbot {
   // MARK: - Constants
   private struct Constants {
     static let delay = 60.0
+    static let cookie = "cookie"
   }
 
-  private let jsonURL: String
-  private let webhookURL: String
+  private let jsonURL: URL
+  private let webhookURL: URL
   private let cookie: String
 
   private let arguments: [String]
@@ -27,17 +24,17 @@ public final class AdventOfCodeSlackbot {
 
   public init?(arguments: [String] = CommandLine.arguments) {
     self.arguments = arguments
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
 
     guard let webhook = ProcessInfo.processInfo.environment[Keys.webhook],
       let json = ProcessInfo.processInfo.environment[Keys.json],
-      let cookie = ProcessInfo.processInfo.environment[Keys.cookie] else {
+      let cookie = ProcessInfo.processInfo.environment[Keys.cookie],
+      let webhookURL = URL(string: webhook), let jsonURL = URL(string: json) else {
         print("Could not find all environment variables: \(Keys.webhook), \(Keys.json), \(Keys.cookie)")
         return nil
     }
 
-    jsonURL = json
-    webhookURL = webhook
+    self.jsonURL = jsonURL
+    self.webhookURL = webhookURL
     self.cookie = cookie
   }
 
@@ -49,9 +46,10 @@ public final class AdventOfCodeSlackbot {
 
   func requestLeaderboardState() {
     print("requestingLeaderboardState")
-    let headers = ["cookie": cookie]
-    Alamofire.request(jsonURL, headers: headers).validate().responseJSON { response in
+    var request = URLRequest(url: jsonURL)
+    request.addValue(cookie, forHTTPHeaderField: Constants.cookie)
 
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
       defer {
         print("waiting \(Constants.delay) seconds before requesting")
         let when = DispatchTime.now() + Constants.delay
@@ -59,30 +57,45 @@ public final class AdventOfCodeSlackbot {
           self.requestLeaderboardState()
         })
       }
-
-      guard response.result.isSuccess, let json = response.result.value as? JSONDictionary else {
-        if let error = response.result.error {
-          print("error: \(error)")
-        }
+      
+      guard error == nil else {
+        print("Error: \(String(describing: error))")
         return
       }
 
-      let latestLeaderboard = Leaderboard(dictionary: json)
-
-      guard let leaderboard = self.leaderboard else {
-        // This is the first version of the leaderboard retrieved.
-        self.leaderboard = latestLeaderboard
-        print("no need to compare, this is our first leaderboard")
+      guard let data = data, let response = String(data: data, encoding: .utf8) else {
+        print("no response from data")
         return
       }
 
-      if leaderboard != latestLeaderboard {
-        self.compareLeaderboardsAndNotify(lhs: leaderboard, rhs: latestLeaderboard)
-        self.leaderboard = latestLeaderboard
+
+      let decoder = JSONDecoder()
+      if #available(OSX 10.12, *) {
+        decoder.dateDecodingStrategy = .iso8601
       } else {
-        print("leaderboards are the same")
+        print("ios8601 not available")
+      }
+      if let latestLeaderboard = try? decoder.decode(Leaderboard.self, from: data) {
+
+        guard let leaderboard = self.leaderboard else {
+          // This is the first version of the leaderboard retrieved.
+          self.leaderboard = latestLeaderboard
+          print("no need to compare, this is our first leaderboard")
+          return
+        }
+
+        if leaderboard != latestLeaderboard {
+          self.compareLeaderboardsAndNotify(lhs: leaderboard, rhs: latestLeaderboard)
+          self.leaderboard = latestLeaderboard
+        } else {
+          print("leaderboards are the same")
+        }
+      } else {
+        print("unable to decode Leaderboard")
       }
     }
+    task.resume()
+
   }
 
   func compareLeaderboardsAndNotify(lhs: Leaderboard, rhs: Leaderboard) {
@@ -104,8 +117,23 @@ public final class AdventOfCodeSlackbot {
   func notify(announcement: String, appendLeaderboard: Bool = true) {
     let announcement = announcement + "\nSee the updated <http://adventofcode.com/2017/leaderboard/private/view/199958|leaderboard>"
     print(announcement)
-    let parameters: Parameters = [ "text": announcement ]
-    Alamofire.request(webhookURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+    var request = URLRequest(url: webhookURL)
+    request.httpMethod = "POST"
+    let parameters = [ "text": announcement ]
+    request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+      guard data != nil, error == nil else {                                                 // check for fundamental networking error
+        print("error=\(String(describing: error))")
+        return
+      }
+
+      if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+        print("statusCode should be 200, but is \(httpStatus.statusCode)")
+        print("response = \(String(describing: response))")
+      }
+
+    }
+    task.resume()
   }
 
 }

@@ -7,19 +7,17 @@
 
 import Foundation
 
-// MARK: - File variable
-let dateFormatter = DateFormatter()
+struct Member : Codable {
 
-struct Member {
-  // MARK: - Keys
-  private struct Keys {
-    static let completionDayLevel = "completion_day_level"
-    static let globalScore = "global_score"
-    static let id = "id"
-    static let lastStarTimestamp = "last_star_ts"
-    static let localScore = "local_score"
-    static let name = "name"
-    static let stars = "stars"
+  // MARK: - Coding Keys
+  enum CodingKeys : String, CodingKey {
+    case id
+    case name
+    case localScore = "local_score"
+    case globalScore = "global_score"
+    case stars
+    case completedDays = "completion_day_level"
+    case lastStarTime = "last_star_ts"
   }
 
   // MARK: - Properties
@@ -28,33 +26,28 @@ struct Member {
   let localScore: Int
   let globalScore: Int
   let stars: Int
-  private(set) var completedDays = [Int : CompletionDayLevel]()
+  private(set) var completedDays: CompletionDayLevel
   private(set) var lastStarTime: Date? = nil
   private(set) var starsByCompletionDate = [Date : Star]()
 
-  // MARK: - Init
-  init(dictionary: JSONDictionary) {
-    id = dictionary[Keys.id] as? String ?? ""
-    name = dictionary[Keys.name] as? String ?? ""
-    localScore = dictionary[Keys.localScore] as? Int ?? 0
-    globalScore = dictionary[Keys.globalScore] as? Int ?? 0
-    stars = dictionary[Keys.stars] as? Int ?? 0
-    if let dateString = dictionary[Keys.lastStarTimestamp] as? String {
-      lastStarTime = dateFormatter.date(from: dateString)
-    }
-
-    if let completionDayLevels = dictionary[Keys.completionDayLevel] as? JSONDictionary {
-      for slice in completionDayLevels {
-        let completionDayLevel = CompletionDayLevel(dictionarySlice: slice)
-        completedDays[completionDayLevel.day] = completionDayLevel
-        if let timestamp = completionDayLevel.part1StarTimestamp {
-          starsByCompletionDate[timestamp] = Star(day: completionDayLevel.day, part: 1)
-        }
-        if let timestamp = completionDayLevel.part2StarTimestamp {
-          starsByCompletionDate[timestamp] = Star(day: completionDayLevel.day, part: 2)
-        }
+  init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    id = try container.decode(String.self, forKey: .id)
+    name = try container.decode(String.self, forKey: .name)
+    localScore = try container.decode(Int.self, forKey: .localScore)
+    globalScore = try container.decode(Int.self, forKey: .globalScore)
+    stars = try container.decode(Int.self, forKey: .stars)
+    completedDays = try container.decode(CompletionDayLevel.self, forKey: .completedDays)
+    lastStarTime = try container.decodeIfPresent(Date.self, forKey: .lastStarTime)
+    for day in completedDays.days.values {
+      if let timestamp = day.part1StarTimestamp {
+        starsByCompletionDate[timestamp] = Star(day: day.dayNumber, part: 1)
+      }
+      if let timestamp = day.part2StarTimestamp {
+        starsByCompletionDate[timestamp] = Star(day: day.dayNumber, part: 2)
       }
     }
+
   }
 
   func mostRecent(numStars: Int) -> [Star] {
