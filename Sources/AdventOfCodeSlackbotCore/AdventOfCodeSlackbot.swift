@@ -116,7 +116,7 @@ public final class AdventOfCodeSlackbot {
   }
 
   func notify(announcement: String, appendLeaderboard: Bool = true) {
-    let announcement = announcement + "\nSee the updated <http://adventofcode.com/2017/leaderboard/private/view/199958|leaderboard>"
+    let announcement = announcement + "\nSee the updated <\(jsonURL.absoluteString.prefix(jsonURL.absoluteString.count - 5))|leaderboard>"
     print(announcement)
     var request = URLRequest(url: webhookURL)
     request.httpMethod = "POST"
