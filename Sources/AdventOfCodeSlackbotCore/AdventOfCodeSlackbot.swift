@@ -22,7 +22,29 @@ public final class AdventOfCodeSlackbot {
 
   private let arguments: [String]
   private var leaderboard: Leaderboard?
+  static let jsonDateDecoder = JSONDecoder.DateDecodingStrategy.custom { (decoder) -> Date in
+    // Possible date string format "1543743314", otherwise 0
+    let container = try decoder.singleValueContainer()
+    let dateStr = try? container.decode(String.self)
+    var date: Date? = nil
+    if let dateStr = dateStr {
+      if let timeSinceEpoch = TimeInterval(dateStr) {
+        date = Date(timeIntervalSince1970: timeSinceEpoch)
+      }
+    } else {
+      let timeSinceEpoch = try? container.decode(Double.self)
+      if let timeSinceEpoch = timeSinceEpoch {
+        date = Date(timeIntervalSince1970: timeSinceEpoch)
+      }
+    }
+    if date == nil {
+      date = Date(timeIntervalSince1970: 0)
+    }
 
+    return date!
+  }
+
+  // MARK: - Init
   public init?(arguments: [String] = CommandLine.arguments) {
     self.arguments = arguments
 
@@ -72,7 +94,7 @@ public final class AdventOfCodeSlackbot {
 
       let decoder = JSONDecoder()
       if #available(OSX 10.12, *) {
-        decoder.dateDecodingStrategy = .iso8601
+        decoder.dateDecodingStrategy = AdventOfCodeSlackbot.jsonDateDecoder
       } else {
         print("ios8601 not available")
       }
