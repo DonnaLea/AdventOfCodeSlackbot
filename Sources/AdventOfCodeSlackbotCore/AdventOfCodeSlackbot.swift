@@ -114,7 +114,7 @@ public final class AdventOfCodeSlackbot {
           print("leaderboards are the same")
         }
       } else {
-        print("unable to decode Leaderboard")
+        print("unable to decode Leaderboard: \n\(response)")
       }
     }
     task.resume()
