@@ -12,7 +12,7 @@ public final class AdventOfCodeSlackbot {
 
   // MARK: - Constants
   private struct Constants {
-    static let delay = 60.0
+    static let delay = 900.0
     static let cookie = "cookie"
   }
 
